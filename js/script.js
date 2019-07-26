@@ -18,6 +18,24 @@ FSJS project 2 - List Filter and Pagination
 ***/
 
 
+//global variables
+const students = document.querySelectorAll('.student-list');
+const studentPages = 10;
+
+//showPage function. Shows only 10 students per page.
+function showPage(list, page) {
+    let startIndex = (page * studentPages) - studentPages;
+    let endIndex = page * studentPages;
+    for (let i = 0; i < list.length; i += 1) {
+        if ([i] >= startIndex && [i] <= endIndex) {
+            list[i].style.display = '';
+        } else {
+            list[i].style.display = 'none';
+        };
+    };
+};
+
+
 
 
 /*** 
